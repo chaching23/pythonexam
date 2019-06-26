@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .header{
+        border-bottom: 5px solid black;    
+    }
+    .header h1{
+        display:inline-block;
+        margin-right:400px;
+
+    }
+    .header a{
+        display:inline-block;
+    }
+    .c {
+        padding:10px;
+        width:300px;
+
+    }
+    </style>
+ 
+</head>
+<body>
+    <div class="header">
+        
+        <h1>View all</h1>
+
+        <a href="/success"><button>Dashboard</button></a>
+        <a href="/logout"><button>Logout</button></a>
+    </div>
+
+   
+    <h3>Posts by: {{ show.users_who_create.first_name }}</h3>
+    <h2>Count: {{all_messages.count}} </h2>
+    
+    {% for x in all_messages %}
+
+
+
+        <ul id="mylist">
+            <li style="color:red"> {{ x.quoted_by}}:<span style="color:black">{{x.message}}</span> </li>
+        </ul>
+
+        {% endfor %}
+  
+
+    
+
+
+</body>
+</html>
